@@ -4,6 +4,6 @@ from website import create_app
 app = create_app()
 
 if __name__ == '__main__':
-    app.run(debug=True)
-    # debug=True will update the site everytime a change is saved in code 
+    #app.run()
+    app.run(host='0.0.0.0', port=8080)
     
