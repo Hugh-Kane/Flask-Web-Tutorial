@@ -29,8 +29,9 @@ def create_app():
     #from . import models
     from .models import User,Note
 
-    with app.app_context():
-        db.create_all()
+    if not path.exists(path.join('instance', DB_NAME)):
+        with app.app_context():
+            db.create_all()
 
     login_manager = LoginManager()
     login_manager.login_view = 'auth.login'
